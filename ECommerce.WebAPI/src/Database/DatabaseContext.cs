@@ -29,19 +29,15 @@ public class DatabaseContext:DbContext
     }
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        if((!optionsBuilder.IsConfigured))
-        {
-                var dataSourceBuilder = new NpgsqlDataSourceBuilder(_config.GetConnectionString("DefaultConnection"));
-                dataSourceBuilder.MapEnum<Role>();
-                dataSourceBuilder.MapEnum<Status>();
-                var dataSource = dataSourceBuilder.Build();
-                optionsBuilder
-                .UseNpgsql(dataSource)
-                .UseSnakeCaseNamingConvention()
-                .AddInterceptors(new TimeStampInterceptor())
-                .AddInterceptors(IgnoreTrackingInterceptor.Instance);
-        }
-    
+        var dataSourceBuilder = new NpgsqlDataSourceBuilder(_config.GetConnectionString("DefaultConnection"));
+        dataSourceBuilder.MapEnum<Role>();
+        dataSourceBuilder.MapEnum<Status>();
+        var dataSource = dataSourceBuilder.Build();
+        optionsBuilder
+        .UseNpgsql(dataSource)
+        .UseSnakeCaseNamingConvention()
+        .AddInterceptors(new TimeStampInterceptor())
+        .AddInterceptors(IgnoreTrackingInterceptor.Instance);
     }
 
  
