@@ -9,6 +9,7 @@ using ECommerceWebAPI;
 using ProductBusiness;
 using ECommerce.WebAPI.src.Repository;
 using Microsoft.AspNetCore.Diagnostics;
+using ECommerceWebAPI;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddCors(options =>
