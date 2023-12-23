@@ -10,9 +10,10 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ECommerceController;
 
-[EnableCors("AllowAny")]
+
 [ApiController]
 [Route("api/v1/[controller]")]
+[EnableCors("AllowAny")]
 public class AuthController : ControllerBase
 {
     private IAuthService _service;

@@ -10,9 +10,10 @@ using Microsoft.AspNetCore.Cors;
 
 namespace ECommerce.Controller.UserController
 {
-    [EnableCors("AllowAny")]
+   
     [ApiController]
     [Route("api/v1/[controller]")]
+    [EnableCors("AllowAny")]
     public class ProductsController : ControllerBase
     {
         private  IProductService _productService;

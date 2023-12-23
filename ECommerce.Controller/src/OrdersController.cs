@@ -11,9 +11,10 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ECommerce.Controller.OrderController
 {
-    [EnableCors("AllowAny")]
+    
     [ApiController]
     [Route("api/v1/[controller]")]
+    [EnableCors("AllowAny")]
     public class OrdersController : ControllerBase
     {
         private IPurchaseService _service;
