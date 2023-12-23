@@ -11,6 +11,17 @@ using ECommerce.WebAPI.src.Repository;
 using Microsoft.AspNetCore.Diagnostics;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddCors(options =>
+    {
+        options.AddPolicy("AllowAny",
+            builder =>
+            {
+                builder
+                    .AllowAnyOrigin()
+                    .AllowAnyMethod()
+                    .AllowAnyHeader();
+            });
+    });
 builder.Services.AddControllers();
 builder.Services.Configure<RouteOptions>(options=>options.LowercaseUrls=true);
 
