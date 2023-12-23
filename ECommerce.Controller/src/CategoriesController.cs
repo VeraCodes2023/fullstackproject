@@ -9,9 +9,10 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ECommerce.Controller.src
 {
-    [EnableCors("AllowAny")]
+   
     [ApiController]
     [Route("api/v1/[controller]")]
+    [EnableCors("AllowAny")]
     public class CategoriesController : ControllerBase
     {
         private ICategoryService _service;
