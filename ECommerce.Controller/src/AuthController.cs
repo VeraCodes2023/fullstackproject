@@ -13,7 +13,6 @@ namespace ECommerceController;
 
 [ApiController]
 [Route("api/v1/[controller]")]
-[EnableCors("AllowAny")]
 public class AuthController : ControllerBase
 {
     private IAuthService _service;

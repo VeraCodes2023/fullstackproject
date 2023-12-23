@@ -12,17 +12,12 @@ using Microsoft.AspNetCore.Diagnostics;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddCors(options =>
-{
-    options.AddPolicy("AllowAny",
-        policyBuilder =>
-        {
-            policyBuilder
-                .AllowAnyOrigin()
-                .AllowAnyMethod()
-                .AllowAnyHeader();
-        });
-});
-
+    options.AddDefaultPolicy(policy=>
+    policy.AllowAnyOrigin()
+          .AllowAnyHeader()
+          .AllowAnyMethod()
+    )
+);
 
 builder.Services.AddControllers();
 builder.Services.Configure<RouteOptions>(options=>options.LowercaseUrls=true);
@@ -85,7 +80,7 @@ builder.Services.AddAuthorization(options =>
 
 
 var app = builder.Build();
-app.UseCors("AllowAny");
+app.UseCors();
 
 app.UseSwagger();
 app.UseSwaggerUI();

@@ -14,7 +14,6 @@ namespace ECommerce.Controller.OrderController
     
     [ApiController]
     [Route("api/v1/[controller]")]
-    [EnableCors("AllowAny")]
     public class OrdersController : ControllerBase
     {
         private IPurchaseService _service;

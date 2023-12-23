@@ -12,7 +12,6 @@ namespace ECommerce.Controller.src
    
     [ApiController]
     [Route("api/v1/[controller]")]
-    [EnableCors("AllowAny")]
     public class CategoriesController : ControllerBase
     {
         private ICategoryService _service;
@@ -24,7 +23,7 @@ namespace ECommerce.Controller.src
         [HttpGet()]
         public ActionResult<ServiceResponse<IEnumerable<CategoryReadDTO>>> GetAll()
         {
-            Response.Headers.Add("Access-Control-Allow-Origin", "*");
+    
             var serviceResponse = new ServiceResponse<IEnumerable<CategoryReadDTO>>();
             try
             {
@@ -47,7 +46,6 @@ namespace ECommerce.Controller.src
         [HttpPost()]
         public ActionResult<ServiceResponse<CategoryReadDTO>> CreateNew([FromBody] CategoryCreateDTO category)
         {
-            Response.Headers.Add("Access-Control-Allow-Origin", "*");
             var serviceResponse = new ServiceResponse<CategoryReadDTO>();
            try
             {
@@ -82,7 +80,6 @@ namespace ECommerce.Controller.src
         [HttpGet("{id}")]
         public ActionResult<ServiceResponse<CategoryReadDTO>> GetById(Guid id)
         {
-            Response.Headers.Add("Access-Control-Allow-Origin", "*");
             var serviceResponse = new ServiceResponse<CategoryReadDTO>();
             try
             {
@@ -118,7 +115,6 @@ namespace ECommerce.Controller.src
         [HttpPut("{id}")]
         public ActionResult<ServiceResponse<CategoryReadDTO>> Update(Guid id, [FromBody] CategoryUpdateDTO category)
         {
-            Response.Headers.Add("Access-Control-Allow-Origin", "*");
             var serviceResponse = new ServiceResponse<CategoryReadDTO>();
           
             try
@@ -152,7 +148,6 @@ namespace ECommerce.Controller.src
         [HttpDelete("{id}")]
         public ActionResult<ServiceResponse<bool>> Delete(Guid id)
         {
-             Response.Headers.Add("Access-Control-Allow-Origin", "*");
             var serviceResponse = new ServiceResponse<bool>();
             try
             {

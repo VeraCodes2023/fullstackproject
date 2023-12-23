@@ -13,7 +13,6 @@ namespace ECommerce.Controller.UserController
    
     [ApiController]
     [Route("api/v1/[controller]")]
-    [EnableCors("AllowAny")]
     public class ProductsController : ControllerBase
     {
         private  IProductService _productService;
