@@ -83,7 +83,7 @@ builder.Services.AddAuthorization(options =>
 
 
 var app = builder.Build();
-
+app.UseCors("AllowAny");
 app.UseCors(options =>
 {
   options
