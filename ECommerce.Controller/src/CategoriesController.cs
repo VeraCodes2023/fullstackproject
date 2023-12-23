@@ -24,6 +24,7 @@ namespace ECommerce.Controller.src
         [HttpGet()]
         public ActionResult<ServiceResponse<IEnumerable<CategoryReadDTO>>> GetAll()
         {
+            Response.Headers.Add("Access-Control-Allow-Origin", "*");
             var serviceResponse = new ServiceResponse<IEnumerable<CategoryReadDTO>>();
             try
             {
@@ -46,7 +47,8 @@ namespace ECommerce.Controller.src
         [HttpPost()]
         public ActionResult<ServiceResponse<CategoryReadDTO>> CreateNew([FromBody] CategoryCreateDTO category)
         {
-           var serviceResponse = new ServiceResponse<CategoryReadDTO>();
+            Response.Headers.Add("Access-Control-Allow-Origin", "*");
+            var serviceResponse = new ServiceResponse<CategoryReadDTO>();
            try
             {
                 var createdCategory = _service.CreateNew(category);
@@ -57,6 +59,7 @@ namespace ECommerce.Controller.src
                     serviceResponse.Success = true;
                     serviceResponse.Message = "Category created successfully!";
                     serviceResponse.StatusCode = 201; 
+                   
                     return StatusCode(serviceResponse.StatusCode, serviceResponse);
                 }
                 else
@@ -79,6 +82,7 @@ namespace ECommerce.Controller.src
         [HttpGet("{id}")]
         public ActionResult<ServiceResponse<CategoryReadDTO>> GetById(Guid id)
         {
+            Response.Headers.Add("Access-Control-Allow-Origin", "*");
             var serviceResponse = new ServiceResponse<CategoryReadDTO>();
             try
             {
@@ -89,6 +93,7 @@ namespace ECommerce.Controller.src
                     serviceResponse.Success = true;
                     serviceResponse.Message = "Category retrieved successfully!";
                     serviceResponse.StatusCode = 200; 
+                   
                     return Ok(serviceResponse);
                 }
                 else
@@ -113,7 +118,9 @@ namespace ECommerce.Controller.src
         [HttpPut("{id}")]
         public ActionResult<ServiceResponse<CategoryReadDTO>> Update(Guid id, [FromBody] CategoryUpdateDTO category)
         {
+            Response.Headers.Add("Access-Control-Allow-Origin", "*");
             var serviceResponse = new ServiceResponse<CategoryReadDTO>();
+          
             try
             {
                 var updatedCategory = _service.Update(id, category);
@@ -145,6 +152,7 @@ namespace ECommerce.Controller.src
         [HttpDelete("{id}")]
         public ActionResult<ServiceResponse<bool>> Delete(Guid id)
         {
+             Response.Headers.Add("Access-Control-Allow-Origin", "*");
             var serviceResponse = new ServiceResponse<bool>();
             try
             {
