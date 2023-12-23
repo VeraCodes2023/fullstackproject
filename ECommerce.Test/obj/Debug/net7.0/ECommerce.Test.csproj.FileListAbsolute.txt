@@ -1,0 +1,5 @@
+/Users/Veraahde/Desktop/Integrify/fs16_CSharp-FullStack/Server/ECommerce.Test/obj/Debug/net7.0/ECommerce.Test.csproj.AssemblyReference.cache
+/Users/Veraahde/Desktop/Integrify/fs16_CSharp-FullStack/Server/ECommerce.Test/obj/Debug/net7.0/ECommerce.Test.GeneratedMSBuildEditorConfig.editorconfig
+/Users/Veraahde/Desktop/Integrify/fs16_CSharp-FullStack/Server/ECommerce.Test/obj/Debug/net7.0/ECommerce.Test.AssemblyInfoInputs.cache
+/Users/Veraahde/Desktop/Integrify/fs16_CSharp-FullStack/Server/ECommerce.Test/obj/Debug/net7.0/ECommerce.Test.AssemblyInfo.cs
+/Users/Veraahde/Desktop/Integrify/fs16_CSharp-FullStack/Server/ECommerce.Test/obj/Debug/net7.0/ECommerce.Test.csproj.CoreCompileInputs.cache

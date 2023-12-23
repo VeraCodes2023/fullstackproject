@@ -1,0 +1,72 @@
+### Create New Product
+POST http://localhost:5000/api/v1/products
+Content-Type: application/json
+Authorization: Bearer  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJmMWY3OGRiYy00OTBjLTQwYjYtODkyOC1lYWQ0YzMxZGQ2MzkiLCJyb2xlIjoiQWRtaW4iLCJuYmYiOjE3MDMxNTQxMzQsImV4cCI6MTcwMzMyNjkzNCwiaWF0IjoxNzAzMTU0MTM0LCJpc3MiOiJWZXJhIENoYW5nIiwiYXVkIjoiRWNvbW1lcmNlIn0.g5gXV3bVKbWHxgwKvWnFfoKe4Rrc86tZs_L38prKsZ4
+
+{
+  "Title": "Suomen Mestari 6",
+  "Price": 40,
+  "Description": "Language learning level C2",
+  "Inventory":200,
+  "CategoryId": "d746fc29-ea09-4688-818b-63d6bb6822fc",
+  "ImageCreateDTOs": [
+    {
+       "Url": "https://fakeimg.pl/200x200"
+       
+    }
+  ]
+}
+
+
+### add more products
+POST http://localhost:5000/api/v1/products
+Content-Type: application/json
+Authorization: Bearer  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJlMTIwNjRjZC0xNTM2LTQ3NzItOGY2MC1hNDdhNTVjMjYzMmYiLCJyb2xlIjoiQWRtaW4iLCJuYmYiOjE3MDMwMDYxNjAsImV4cCI6MTcwMzE3ODk2MCwiaWF0IjoxNzAzMDA2MTYwLCJpc3MiOiJWZXJhIENoYW5nIiwiYXVkIjoiRWNvbW1lcmNlIn0.NDSx4C8PLTiCIJzVxitk4enTxR-L801N1CijGUcm08A
+
+{
+  "Title": "Apple Phone 12",
+  "Price": 1200,
+  "Description": "For video live vloggers and professional photographers.",
+  "CategoryId": "f2e28553-2b43-4d61-bb4d-20a2b88048a0",
+  "ImageCreateDTOs": [
+    {
+       "Url": "https://fakeimg.pl/200x200"
+    }
+  ]
+}
+
+### Get All Product
+GET http://localhost:5000/api/v1/products
+Authorization: Bearer  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJlMTIwNjRjZC0xNTM2LTQ3NzItOGY2MC1hNDdhNTVjMjYzMmYiLCJyb2xlIjoiQWRtaW4iLCJuYmYiOjE3MDMwMDYxNjAsImV4cCI6MTcwMzE3ODk2MCwiaWF0IjoxNzAzMDA2MTYwLCJpc3MiOiJWZXJhIENoYW5nIiwiYXVkIjoiRWNvbW1lcmNlIn0.NDSx4C8PLTiCIJzVxitk4enTxR-L801N1CijGUcm08A
+Content-Type: application/json
+
+
+##### Get One product by id
+GET http://localhost:5000/api/v1/products/36fc8843-79e8-4152-8d60-75a09410b00d
+Authorization: Bearer  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJlMTIwNjRjZC0xNTM2LTQ3NzItOGY2MC1hNDdhNTVjMjYzMmYiLCJyb2xlIjoiQWRtaW4iLCJuYmYiOjE3MDMwMDYxNjAsImV4cCI6MTcwMzE3ODk2MCwiaWF0IjoxNzAzMDA2MTYwLCJpc3MiOiJWZXJhIENoYW5nIiwiYXVkIjoiRWNvbW1lcmNlIn0.NDSx4C8PLTiCIJzVxitk4enTxR-L801N1CijGUcm08A
+Content-Type: application/json
+
+
+### Update Any Product as Admin
+PUT http://localhost:5000/api/v1/products/a8ce077c-6f25-4f78-bc3e-796b2759b786
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJlMTIwNjRjZC0xNTM2LTQ3NzItOGY2MC1hNDdhNTVjMjYzMmYiLCJyb2xlIjoiQWRtaW4iLCJuYmYiOjE3MDMwMDYxNjAsImV4cCI6MTcwMzE3ODk2MCwiaWF0IjoxNzAzMDA2MTYwLCJpc3MiOiJWZXJhIENoYW5nIiwiYXVkIjoiRWNvbW1lcmNlIn0.NDSx4C8PLTiCIJzVxitk4enTxR-L801N1CijGUcm08A
+Content-Type: application/json
+
+{
+  "Title": "Suomen Mestari 5",
+  "Price": 55,
+  "Description": "Finnish Language learning material for primary level A1-A2",
+  "CategoryId": "d746fc29-ea09-4688-818b-63d6bb6822fc",
+  "ImageUpdateDTOs": [
+    {
+       "Url": "https://fakeimg.pl/200x180"
+       
+    }
+  ],
+  "Inventory":19
+}
+
+#### Delete Product
+DELETE http://localhost:5000/api/v1/products/0b356c0f-51d1-4f12-a0e2-cbaad8f6bfd8
+Authorization: Bearer  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJlMTIwNjRjZC0xNTM2LTQ3NzItOGY2MC1hNDdhNTVjMjYzMmYiLCJyb2xlIjoiQWRtaW4iLCJuYmYiOjE3MDMwMDYxNjAsImV4cCI6MTcwMzE3ODk2MCwiaWF0IjoxNzAzMDA2MTYwLCJpc3MiOiJWZXJhIENoYW5nIiwiYXVkIjoiRWNvbW1lcmNlIn0.NDSx4C8PLTiCIJzVxitk4enTxR-L801N1CijGUcm08A
+Content-Type: application/json
