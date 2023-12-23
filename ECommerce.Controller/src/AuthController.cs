@@ -5,10 +5,12 @@ using System.Threading.Tasks;
 using Core;
 using ECommerceBusiness;
 using ECommerceCore;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ECommerceController;
 
+[EnableCors("AllowAny")]
 [ApiController]
 [Route("api/v1/[controller]")]
 public class AuthController : ControllerBase

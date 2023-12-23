@@ -4,10 +4,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using Core;
 using ECommerceBusiness;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ECommerce.Controller.src
 {
+    [EnableCors("AllowAny")]
     [ApiController]
     [Route("api/v1/[controller]")]
     public class CategoriesController : ControllerBase

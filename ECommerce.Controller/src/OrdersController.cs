@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 using Core;
 using ECommerceBusiness;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ECommerce.Controller.OrderController
 {
+    [EnableCors("AllowAny")]
     [ApiController]
     [Route("api/v1/[controller]")]
     public class OrdersController : ControllerBase

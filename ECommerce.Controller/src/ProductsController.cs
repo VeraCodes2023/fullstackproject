@@ -6,9 +6,11 @@ using Microsoft.AspNetCore.Mvc;
 using Core;
 using ECommerceBusiness;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Cors;
 
 namespace ECommerce.Controller.UserController
 {
+    [EnableCors("AllowAny")]
     [ApiController]
     [Route("api/v1/[controller]")]
     public class ProductsController : ControllerBase

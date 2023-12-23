@@ -8,10 +8,12 @@ using ECommerceBusiness;
 using ECommerceCore;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Cors;
 
 
 namespace ECommerce.Controller.UserController
 {
+    [EnableCors("AllowAny")]
     [ApiController]
     [Route("api/v1/[controller]")]
     public class UsersController : ControllerBase
