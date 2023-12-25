@@ -54,4 +54,4 @@ jobs:
           app-name: 'ecommerce2024'
           slot-name: 'Production'
           package: .
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_72C8998E0AF14339959C79BA599EC184 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_12CED325015C48D19B35995BB49C531A }}
