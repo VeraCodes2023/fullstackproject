@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ySPIq3BNxpHuJX6v8zLRVcWqZIt8ULptPPUitqZSs8TgCubiDJooCr/QibhTDZ6qKP/CZeXY31dGeFwW4abpAg==",
+  "dgSpecHash": "AOxtJ54IJHLAROj9R16updDjzeIUHZMZmIgvKLj0aTebLGkiaOiN5dA0ahD00fxjtcQlPWETNIfn0pxCXOGOLw==",
   "success": true,
-  "projectFilePath": "/Users/Veraahde/Desktop/Integrify/fullstackproject/Ecommerce.Business/ECommerce.Business.csproj",
+  "projectFilePath": "/Users/Veraahde/Desktop/Integrify/fullstackproject/ECommerce.Business/ECommerce.Business.csproj",
   "expectedPackageFiles": [
     "/Users/Veraahde/.nuget/packages/automapper/12.0.1/automapper.12.0.1.nupkg.sha512",
     "/Users/Veraahde/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",

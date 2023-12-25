@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/Veraahde/Desktop/Integrify/fullstackproject/Ecommerce.Business/ECommerce.Business.csproj": {}
+    "/Users/Veraahde/Desktop/Integrify/fullstackproject/ECommerce.Business/ECommerce.Business.csproj": {}
   },
   "projects": {
-    "/Users/Veraahde/Desktop/Integrify/fullstackproject/Ecommerce.Business/ECommerce.Business.csproj": {
+    "/Users/Veraahde/Desktop/Integrify/fullstackproject/ECommerce.Business/ECommerce.Business.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/Veraahde/Desktop/Integrify/fullstackproject/Ecommerce.Business/ECommerce.Business.csproj",
+        "projectUniqueName": "/Users/Veraahde/Desktop/Integrify/fullstackproject/ECommerce.Business/ECommerce.Business.csproj",
         "projectName": "ECommerce.Business",
-        "projectPath": "/Users/Veraahde/Desktop/Integrify/fullstackproject/Ecommerce.Business/ECommerce.Business.csproj",
+        "projectPath": "/Users/Veraahde/Desktop/Integrify/fullstackproject/ECommerce.Business/ECommerce.Business.csproj",
         "packagesPath": "/Users/Veraahde/.nuget/packages/",
-        "outputPath": "/Users/Veraahde/Desktop/Integrify/fullstackproject/Ecommerce.Business/obj/",
+        "outputPath": "/Users/Veraahde/Desktop/Integrify/fullstackproject/ECommerce.Business/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/Veraahde/.nuget/NuGet/NuGet.Config"
@@ -26,8 +26,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "/Users/Veraahde/Desktop/Integrify/fullstackproject/Ecommerce.Core/ECommerce.Core.csproj": {
-                "projectPath": "/Users/Veraahde/Desktop/Integrify/fullstackproject/Ecommerce.Core/ECommerce.Core.csproj"
+              "/Users/Veraahde/Desktop/Integrify/fullstackproject/ECommerce.Core/ECommerce.Core.csproj": {
+                "projectPath": "/Users/Veraahde/Desktop/Integrify/fullstackproject/ECommerce.Core/ECommerce.Core.csproj"
               }
             }
           }
@@ -75,14 +75,14 @@
         }
       }
     },
-    "/Users/Veraahde/Desktop/Integrify/fullstackproject/Ecommerce.Core/ECommerce.Core.csproj": {
+    "/Users/Veraahde/Desktop/Integrify/fullstackproject/ECommerce.Core/ECommerce.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/Veraahde/Desktop/Integrify/fullstackproject/Ecommerce.Core/ECommerce.Core.csproj",
+        "projectUniqueName": "/Users/Veraahde/Desktop/Integrify/fullstackproject/ECommerce.Core/ECommerce.Core.csproj",
         "projectName": "ECommerce.Core",
-        "projectPath": "/Users/Veraahde/Desktop/Integrify/fullstackproject/Ecommerce.Core/ECommerce.Core.csproj",
+        "projectPath": "/Users/Veraahde/Desktop/Integrify/fullstackproject/ECommerce.Core/ECommerce.Core.csproj",
         "packagesPath": "/Users/Veraahde/.nuget/packages/",
-        "outputPath": "/Users/Veraahde/Desktop/Integrify/fullstackproject/Ecommerce.Core/obj/",
+        "outputPath": "/Users/Veraahde/Desktop/Integrify/fullstackproject/ECommerce.Core/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/Veraahde/.nuget/NuGet/NuGet.Config"
