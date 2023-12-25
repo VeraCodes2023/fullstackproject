@@ -5,7 +5,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ECommerceBusiness;
+namespace ECommerce.Business;
 public class PasswordService
 {
      private const int SaltSize = 128 / 8;

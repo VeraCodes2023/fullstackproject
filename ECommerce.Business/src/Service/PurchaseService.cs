@@ -4,10 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Core;
 using AutoMapper;
-using ECommerce.Business;
 
-
-namespace ECommerceBusiness;
+namespace ECommerce.Business;
 public class PurchaseService : IPurchaseService
 {
     private readonly IPurchaseRepo _repo;
@@ -48,10 +46,13 @@ public class PurchaseService : IPurchaseService
     {
         var user = _userRepo.GetById(userId);
         List<PurchaseItem> orderItems = _mapper.Map<List<PurchaseItem>>(newOrder.PurchaseItemCreateDTOs);
-
-        if(user ==null || orderItems.Count <=0)
+        if (user == null)
         {
-            throw new Exception("bad request");
+            throw new Exception("User not found");
+        }
+        else if (orderItems == null || !orderItems.Any())
+        {
+            throw new Exception("Order items are empty");
         }
         else
         {
@@ -69,31 +70,39 @@ public class PurchaseService : IPurchaseService
             createdPurchaseDTO.User.Name = user.Name;
             createdPurchaseDTO.User.Email = user.Email;
             createdPurchaseDTO.User.AddressReadDTOs = _mapper.Map<List<AddressReadDTO>>(user.Addresses);
-            
-            foreach (var purchaseItem in createdOrder.PurchaseItems)
-            {
-                var product = _productRepo.GetById(purchaseItem.ProductId);
-                if (product == null)
-                {
-                    throw new Exception("Product not found");
-                }
 
-                if (purchaseItem.Quantity > product.Inventory)
+            if (createdOrder != null && createdOrder.PurchaseItems != null)
+            {
+                foreach (var purchaseItem in createdOrder.PurchaseItems)
                 {
-                    throw new Exception("bad request due to insufficient inventory");
+                    var product = _productRepo.GetById(purchaseItem.ProductId);
+                    if (product == null)
+                    {
+                        throw new Exception("Product not found");
+                    }
+
+                    if (purchaseItem.Quantity > product.Inventory)
+                    {
+                        throw new Exception("bad request due to insufficient inventory");
+                    }
+                    var purchaseItemDTO = _mapper.Map<PurchaseItemReadDTO>(purchaseItem);
+                    var productDTO = _mapper.Map<ProductReadDTO>(product);
+                    purchaseItemDTO.ProductName = productDTO.Title;
+                    purchaseItemDTO.ProductPrice = productDTO.Price;
+                    createdPurchaseDTO.PurchaseItemReadDTOs.Add(purchaseItemDTO);
+                    
                 }
-                var purchaseItemDTO = _mapper.Map<PurchaseItemReadDTO>(purchaseItem);
-                var productDTO = _mapper.Map<ProductReadDTO>(product);
-                purchaseItemDTO.ProductName = productDTO.Title;
-                purchaseItemDTO.ProductPrice = productDTO.Price;
-                createdPurchaseDTO.PurchaseItemReadDTOs.Add(purchaseItemDTO);
-                
+                return createdPurchaseDTO;
             }
-             return createdPurchaseDTO; 
+            else
+            {
+                
+                throw new Exception("createdOrder is null, or PurchaseItems is null.");
+            }
         }
-        catch(Exception)
+        catch(Exception e)
         {
-            throw new Exception("order failed to create");
+            throw new Exception("order failed to create" + e);
         }
     }
        

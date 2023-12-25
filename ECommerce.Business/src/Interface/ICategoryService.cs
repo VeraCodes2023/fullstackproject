@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ECommerceBusiness;
+namespace ECommerce.Business;
 public interface ICategoryService
 {
     IEnumerable<CategoryReadDTO> GetAll();

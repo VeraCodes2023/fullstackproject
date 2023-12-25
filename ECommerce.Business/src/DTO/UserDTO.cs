@@ -4,11 +4,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using Core;
 
-namespace ECommerceBusiness;
+namespace ECommerce.Business;
 public class UserReadDTO
 {
     public string Name { get; set; }
     public string Email { get; set; }
+    public string Avatar {get;set;}
     public List <AddressReadDTO> AddressReadDTOs{ get; set; }
 
 }

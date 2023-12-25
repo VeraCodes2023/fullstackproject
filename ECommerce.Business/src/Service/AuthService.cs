@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Core;
-using ECommerceCore;
 using Microsoft.IdentityModel.Tokens;
 
-namespace ECommerceBusiness;
+namespace ECommerce.Business;
 public class AuthService:IAuthService
 {
     private readonly IUserRepo _userRepo;
@@ -19,7 +18,7 @@ public class AuthService:IAuthService
    
     public string Login(Credential credential)
     {
-        var foundByEmal = _userRepo.getByEmail(credential.Email);
+        var foundByEmal = _userRepo.GetByEmail(credential.Email);
         if(foundByEmal !=null)
         {
             var isPasswordMtach = new PasswordService().VerifyPassword(foundByEmal.Password,credential.Password);

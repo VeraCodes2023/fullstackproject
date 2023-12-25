@@ -4,10 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using Core;
-using ECommerce.Business;
-using ECommerceBusiness;
 
-namespace ProductBusiness;
+namespace ECommerce.Business;
 public class MapperProfile:Profile
 {
     public MapperProfile()

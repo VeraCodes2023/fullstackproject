@@ -4,9 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using Core;
-using ECommerceCore;
 
-namespace ECommerceBusiness;
+namespace ECommerce.Business;
 public class UserService : IUserService
 {   private readonly IPasswordHashRepo _passwordRepo;  
     private readonly IUserRepo _userRepo;
@@ -38,14 +37,27 @@ public class UserService : IUserService
             newUser.Password = passwordHash;
             
             if (userCreateDto.AddressCreateDTOs != null && userCreateDto.AddressCreateDTOs.Any())
-            foreach (var addressDto in userCreateDto.AddressCreateDTOs)
             {
-                var address = _mapper.Map<AddressCreateDTO, Address>(addressDto);
-                address.IsDefault = true;
-            }
+                foreach (var addressDto in userCreateDto.AddressCreateDTOs)
+                {
+                    var address = _mapper.Map<AddressCreateDTO, Address>(addressDto);
+                    if (address != null)
+                    {
+                        address.IsDefault = true;
+                         newUser.Addresses.Add(address);
+                    }
+                   
+                }
 
-            var result = _userRepo.Register(newUser);
-            return _mapper.Map<User, UserReadDTO>(result);
+                var result = _userRepo.Register(newUser);
+            
+              return _mapper.Map<User, UserReadDTO>(result);
+
+            }
+            else
+            {
+                return null;
+            }
     
         }
         catch(Exception )
@@ -108,7 +120,7 @@ public class UserService : IUserService
         }
         try
         {
-            var targetUser=_userRepo.getByEmail(email);
+            var targetUser=_userRepo.GetByEmail(email);
             if(targetUser is not null)
             {
                 var mappedResult = _mapper.Map<UserReadDTO>(targetUser);
@@ -160,23 +172,33 @@ public class UserService : IUserService
             targetUser!.Avatar =userUpdateDto.Avatar;
             List<AddressReadDTO> updatedAddresses = new List<AddressReadDTO>(); 
             if (userUpdateDto.AddressUpdateDTOs != null && userUpdateDto.AddressUpdateDTOs.Any())
-            targetUser.Addresses.Clear();
-            foreach (var addressUpdateDTO in userUpdateDto.AddressUpdateDTOs)
             {
-                var address = new Address
+                foreach (var addressUpdateDTO in userUpdateDto.AddressUpdateDTOs)
                 {
-                    Street = addressUpdateDTO.Street,
-                    City = addressUpdateDTO.City,
-                    State = addressUpdateDTO.State,
-                    PostalCode = addressUpdateDTO.PostalCode,
-                    Country = addressUpdateDTO.Country,
-                    IsDefault = addressUpdateDTO.IsDefault
-                };
-                targetUser.Addresses.Add(address);
+                    if (targetUser.Addresses != null)
+                    {
+                        targetUser.Addresses.Clear();
+                        var address = new Address
+                        {
+                            Street = addressUpdateDTO.Street,
+                            City = addressUpdateDTO.City,
+                            State = addressUpdateDTO.State,
+                            PostalCode = addressUpdateDTO.PostalCode,
+                            Country = addressUpdateDTO.Country,
+                            IsDefault = addressUpdateDTO.IsDefault
+                        };
+                        targetUser.Addresses.Add(address);
+                    }
+                }
+                _userRepo.Update(userId,targetUser);
+                return _mapper.Map<UserReadDTO>(targetUser);
+            }
+            else
+            {
+                return null;
             }
 
-            _userRepo.Update(userId,targetUser);
-            return _mapper.Map<UserReadDTO>(targetUser);
+           
         }
         catch (Exception)
         {
@@ -202,6 +224,9 @@ public class UserService : IUserService
             List<AddressReadDTO> updatedAddresses = new List<AddressReadDTO>(); 
 
           if (updatedProfile.AddressUpdateDTOs != null && updatedProfile.AddressUpdateDTOs.Any())
+          {
+            if(targetUser.Addresses !=null)
+            {
             targetUser.Addresses.Clear();
             foreach (var addressUpdateDTO in updatedProfile.AddressUpdateDTOs)
             {
@@ -215,10 +240,14 @@ public class UserService : IUserService
                     IsDefault = addressUpdateDTO.IsDefault
                 };
                 targetUser.Addresses.Add(address);
-            }
+            }}
             _userRepo.Update(userId,targetUser);
             return _mapper.Map<UserReadDTO>(targetUser);
-
+          }
+          else
+          {
+            return null;
+          }
         }
         catch (Exception)
         {
@@ -254,7 +283,7 @@ public class UserService : IUserService
     }
     public string Login(Credential credential)
     {
-         var user = _userRepo.getByEmail(credential.Email);
+         var user = _userRepo.GetByEmail(credential.Email);
         if (user != null && _passwordRepo.VerifyPassword(user.Password, credential.Password))
         {
             return _userRepo.GenerateToken(user);

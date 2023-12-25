@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/Veraahde/Desktop/Integrify/fullstackproject/ECommerce.Core/ECommerce.Core.csproj": {}
+    "/Users/Veraahde/Desktop/Integrify/fullstackproject/Ecommerce.Core/ECommerce.Core.csproj": {}
   },
   "projects": {
-    "/Users/Veraahde/Desktop/Integrify/fullstackproject/ECommerce.Core/ECommerce.Core.csproj": {
+    "/Users/Veraahde/Desktop/Integrify/fullstackproject/Ecommerce.Core/ECommerce.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/Veraahde/Desktop/Integrify/fullstackproject/ECommerce.Core/ECommerce.Core.csproj",
+        "projectUniqueName": "/Users/Veraahde/Desktop/Integrify/fullstackproject/Ecommerce.Core/ECommerce.Core.csproj",
         "projectName": "ECommerce.Core",
-        "projectPath": "/Users/Veraahde/Desktop/Integrify/fullstackproject/ECommerce.Core/ECommerce.Core.csproj",
+        "projectPath": "/Users/Veraahde/Desktop/Integrify/fullstackproject/Ecommerce.Core/ECommerce.Core.csproj",
         "packagesPath": "/Users/Veraahde/.nuget/packages/",
-        "outputPath": "/Users/Veraahde/Desktop/Integrify/fullstackproject/ECommerce.Core/obj/",
+        "outputPath": "/Users/Veraahde/Desktop/Integrify/fullstackproject/Ecommerce.Core/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/Veraahde/.nuget/NuGet/NuGet.Config"

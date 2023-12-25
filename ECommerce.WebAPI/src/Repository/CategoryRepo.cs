@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Core;
-using ECommerceBusiness;
+using ECommerce.Business;
 using Microsoft.EntityFrameworkCore;
 
 namespace ECommerceWebAPI;
-
 public class CategoryRepo : ICategoryRepo
 {
     protected DbSet<Category> _categories;

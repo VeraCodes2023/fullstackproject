@@ -4,11 +4,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using Core;
 
-namespace ECommerceBusiness;
+namespace ECommerce.Business;
 public class ProductReadDTO
 {
     public string Title { get; set; }
-    public int Price { get; set; } 
+    public double Price { get; set; } 
     public int Inventory {get;set;}
     public string Description { get; set; }
     public List<ImageReadDTO> ImageReadDTOs { get; set; }
@@ -16,7 +16,7 @@ public class ProductReadDTO
 public class ProductUpdateDTO
 {
     public string Title { get; set; }
-    public int Price { get; set; } 
+    public double Price { get; set; } 
     public int Inventory {get;set;}
     public string Description { get; set; }
     public Guid CategoryId { get; set; }
@@ -26,7 +26,7 @@ public class ProductUpdateDTO
 public class ProductCreateDTO
 {
     public string Title { get; set; }
-    public int Price { get; set; } 
+    public double Price { get; set; } 
     public int Inventory {get;set;}
     public string Description { get; set; }
     public Guid CategoryId { get; set; }

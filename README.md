@@ -1,17 +1,18 @@
 ## Ecommerce Fullstack Project Documentation
 
 ### Table of Contents
-- [Introduction](#1-Introduction)
-- [Technology Stack](#1-Technology-Stack)
-- [Project Overview](#1-Project-Overview)
-- [Architecture](#1-Architecture)
-- [Features](#1-Features)
-- [File Structure](#1-File-Structure)
-- [Backend Implementation](#1-Backend-Implementation)
-- [Frontend Connection](#1-Frontend-Connection)
-- [Testing](#1-Testing)
-- [Deployment](#1-Deployment)
-- [Conclusion](#1-Conclusion)
+- [Introduction](#Introduction)
+- [Technology Stack](#Technology-Stack)
+- [Project Overview](#Project-Overview)
+- [Architecture](#Architecture)
+- [Features](#Features)
+- [File Structure](#File-Structure)
+- [Backend Implementation](#Backend-Implementation)
+- [Frontend Connection](#Frontend-Connection)
+- [Testing](#Testing)
+- [Deployment](#Deployment)
+- [Conclusion](#Conclusion)
+
 
 ### Introduction
 This documentation aims to provide comprehensive insights into the Fullstack Project, detailing the implementation and functionalities of both the frontend and backend components. The project is designed to deliver a seamless user experience with robust administrative management to the Ecommerce web application. The Fullstack Project comprises a frontend developed using TypeScript, React, and Redux Toolkit, and a backend built on .NET Core 7, Entity Framework Core, and PostgreSQL. The primary aim is to create a functional and user-friendly application with user management, product browsing, cart functionality, and seamless checkout for users, while providing administrators with robust user, product, and order management capabilities.
@@ -76,6 +77,7 @@ The modified frontend project is connected to this backend server to create a co
 ### Testing
 Unit tests are implemented, primarily focusing on the Service layer using xUnit. Additional tests cover entities, repositories, and controllers.
 Swagger Documentation. Both frontend and backend code undergo unit testing to achieve high test coverage and ensure all major functionalities are covered.
+![Alt text](image.png)
 
 ### Deployment
 The live servers host frontend, backend, and database servers for comprehensive access and functionality.

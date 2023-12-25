@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Core;
-using ECommerceCore;
-namespace ECommerceBusiness;
+namespace ECommerce.Business;
 public interface IUserService
 {
     IEnumerable <UserReadDTO> GetAllUsers(UserQueryParameters options); //Admin auth

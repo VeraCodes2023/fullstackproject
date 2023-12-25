@@ -8,8 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Transactions;
 using Core;
-using ECommerceBusiness;
-using ECommerceCore;
+using ECommerce.Business;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -60,7 +59,7 @@ public class UserRepo : IUserRepo
         _database.SaveChanges();
         return user;
     }
-    public User getByEmail(string email)
+    public User GetByEmail(string email)
     {
         var foundUser = _users.Include(u=>u.Addresses).FirstOrDefault(p=>p.Email ==email);
         return foundUser!;
@@ -148,4 +147,6 @@ public class UserRepo : IUserRepo
         return tokenHandler.WriteToken(token);
 
     }
+
+  
 }

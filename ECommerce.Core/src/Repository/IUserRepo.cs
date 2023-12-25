@@ -2,14 +2,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using ECommerceCore;
+using Core;
 
 namespace Core;
 public interface IUserRepo
 {
     IEnumerable<User> GetAll(UserQueryParameters options);// admin auth
     User GetById(Guid id); // admin auth
-    User getByEmail(string email);
+    User GetByEmail(string email);
     User GetUserProfile(Guid id);
     User UpdateUserProfile(Guid userId, User user); 
     User Update(Guid userId, User user); // admin auth

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ECommerceCore;
+namespace Core;
 public class Credential
 {
     public required string Email { get; set; }

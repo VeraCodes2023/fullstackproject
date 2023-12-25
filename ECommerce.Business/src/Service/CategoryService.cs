@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 using Core;
 
-namespace ECommerceBusiness;
+namespace ECommerce.Business;
 public class CategoryService : ICategoryService
 {
     private readonly ICategoryRepo _repository;

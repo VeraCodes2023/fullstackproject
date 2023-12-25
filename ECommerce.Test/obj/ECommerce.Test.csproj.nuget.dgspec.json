@@ -1,17 +1,88 @@
 {
   "format": 1,
   "restore": {
-    "/Users/Veraahde/Desktop/Integrify/fs16_CSharp-FullStack/Server/ECommerce.Test/ECommerce.Test.csproj": {}
+    "/Users/Veraahde/Desktop/Integrify/fullstackproject/ECommerce.Test/ECommerce.Test.csproj": {}
   },
   "projects": {
-    "/Users/Veraahde/Desktop/Integrify/fs16_CSharp-FullStack/Server/ECommerce.Test/ECommerce.Test.csproj": {
+    "/Users/Veraahde/Desktop/Integrify/fullstackproject/Ecommerce.Business/ECommerce.Business.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/Veraahde/Desktop/Integrify/fs16_CSharp-FullStack/Server/ECommerce.Test/ECommerce.Test.csproj",
-        "projectName": "ECommerce.Test",
-        "projectPath": "/Users/Veraahde/Desktop/Integrify/fs16_CSharp-FullStack/Server/ECommerce.Test/ECommerce.Test.csproj",
+        "projectUniqueName": "/Users/Veraahde/Desktop/Integrify/fullstackproject/Ecommerce.Business/ECommerce.Business.csproj",
+        "projectName": "ECommerce.Business",
+        "projectPath": "/Users/Veraahde/Desktop/Integrify/fullstackproject/Ecommerce.Business/ECommerce.Business.csproj",
         "packagesPath": "/Users/Veraahde/.nuget/packages/",
-        "outputPath": "/Users/Veraahde/Desktop/Integrify/fs16_CSharp-FullStack/Server/ECommerce.Test/obj/",
+        "outputPath": "/Users/Veraahde/Desktop/Integrify/fullstackproject/Ecommerce.Business/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/Veraahde/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "/Users/Veraahde/Desktop/Integrify/fullstackproject/Ecommerce.Core/ECommerce.Core.csproj": {
+                "projectPath": "/Users/Veraahde/Desktop/Integrify/fullstackproject/Ecommerce.Core/ECommerce.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[7.0.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.309/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/Veraahde/Desktop/Integrify/fullstackproject/Ecommerce.Core/ECommerce.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/Veraahde/Desktop/Integrify/fullstackproject/Ecommerce.Core/ECommerce.Core.csproj",
+        "projectName": "ECommerce.Core",
+        "projectPath": "/Users/Veraahde/Desktop/Integrify/fullstackproject/Ecommerce.Core/ECommerce.Core.csproj",
+        "packagesPath": "/Users/Veraahde/.nuget/packages/",
+        "outputPath": "/Users/Veraahde/Desktop/Integrify/fullstackproject/Ecommerce.Core/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/Veraahde/.nuget/NuGet/NuGet.Config"
@@ -37,7 +108,71 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.309/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/Veraahde/Desktop/Integrify/fullstackproject/ECommerce.Test/ECommerce.Test.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/Veraahde/Desktop/Integrify/fullstackproject/ECommerce.Test/ECommerce.Test.csproj",
+        "projectName": "ECommerce.Test",
+        "projectPath": "/Users/Veraahde/Desktop/Integrify/fullstackproject/ECommerce.Test/ECommerce.Test.csproj",
+        "packagesPath": "/Users/Veraahde/.nuget/packages/",
+        "outputPath": "/Users/Veraahde/Desktop/Integrify/fullstackproject/ECommerce.Test/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/Veraahde/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "/Users/Veraahde/Desktop/Integrify/fullstackproject/Ecommerce.Business/ECommerce.Business.csproj": {
+                "projectPath": "/Users/Veraahde/Desktop/Integrify/fullstackproject/Ecommerce.Business/ECommerce.Business.csproj"
+              },
+              "/Users/Veraahde/Desktop/Integrify/fullstackproject/Ecommerce.Core/ECommerce.Core.csproj": {
+                "projectPath": "/Users/Veraahde/Desktop/Integrify/fullstackproject/Ecommerce.Core/ECommerce.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
               "version": "[17.5.0, )"

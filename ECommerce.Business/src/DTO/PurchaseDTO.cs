@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Core;
 using ECommerce.Business;
 
-namespace ECommerceBusiness;
+namespace ECommerce.Business;
 public class  PurchaseReadDTO
 {
     public Guid PurchaseId { get; set; }

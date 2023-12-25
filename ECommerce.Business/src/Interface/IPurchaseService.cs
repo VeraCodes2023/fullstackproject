@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Core;
 
-namespace ECommerceBusiness;
+namespace ECommerce.Business;
 public interface IPurchaseService
 {
     IEnumerable<PurchaseReadDTO> GetAllOrders(BaseQueryParameter options);

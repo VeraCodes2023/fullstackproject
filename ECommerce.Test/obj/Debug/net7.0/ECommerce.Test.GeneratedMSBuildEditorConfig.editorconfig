@@ -8,4 +8,4 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ECommerce.Test
-build_property.ProjectDir = /Users/Veraahde/Desktop/Integrify/fs16_CSharp-FullStack/Server/ECommerce.Test/
+build_property.ProjectDir = /Users/Veraahde/Desktop/Integrify/fullstackproject/ECommerce.Test/
