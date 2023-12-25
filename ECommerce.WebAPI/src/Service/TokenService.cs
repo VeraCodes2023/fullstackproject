@@ -6,7 +6,7 @@ using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 using Core;
-using ECommerceBusiness;
+using ECommerce.Business;
 using Microsoft.IdentityModel.Tokens;
 
 namespace ECommerceWebAPI;

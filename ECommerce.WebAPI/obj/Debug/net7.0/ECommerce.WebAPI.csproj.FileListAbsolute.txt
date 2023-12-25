@@ -124,3 +124,8 @@
 /Users/Veraahde/Desktop/Integrify/fullstackproject/ECommerce.WebAPI/obj/Debug/net7.0/ECommerce.WebAPI.pdb
 /Users/Veraahde/Desktop/Integrify/fullstackproject/ECommerce.WebAPI/obj/Debug/net7.0/ECommerce.WebAPI.genruntimeconfig.cache
 /Users/Veraahde/Desktop/Integrify/fullstackproject/ECommerce.WebAPI/obj/Debug/net7.0/ref/ECommerce.WebAPI.dll
+/Users/Veraahde/Desktop/Integrify/fullstackproject/ECommerce.WebAPI/bin/Debug/net7.0/Publish/web.config
+/Users/Veraahde/Desktop/Integrify/fullstackproject/ECommerce.WebAPI/bin/Debug/net7.0/Publish/appsettings.Development.json
+/Users/Veraahde/Desktop/Integrify/fullstackproject/ECommerce.WebAPI/bin/Debug/net7.0/Publish/appsettings.json
+/Users/Veraahde/Desktop/Integrify/fullstackproject/ECommerce.WebAPI/bin/Debug/net7.0/Publish/ECommerce.WebAPI.deps.json
+/Users/Veraahde/Desktop/Integrify/fullstackproject/ECommerce.WebAPI/bin/Debug/net7.0/Publish/ECommerce.WebAPI.runtimeconfig.json

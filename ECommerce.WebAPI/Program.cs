@@ -2,14 +2,11 @@ using Microsoft.EntityFrameworkCore;
 using Npgsql.EntityFrameworkCore.PostgreSQL;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Core;
-using ECommerceBusiness;
+using ECommerce.Business;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using ECommerceWebAPI;
-using ProductBusiness;
-using ECommerce.WebAPI.src.Repository;
 using Microsoft.AspNetCore.Diagnostics;
-using ECommerceWebAPI;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddCors(options =>
