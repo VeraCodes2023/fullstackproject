@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using Npgsql.EntityFrameworkCore.PostgreSQL;
 using Npgsql;
 using Core;
+using Microsoft.EntityFrameworkCore.Diagnostics;
 
 namespace ECommerceWebAPI;
 public class DatabaseContext:DbContext
@@ -38,6 +39,10 @@ public class DatabaseContext:DbContext
         .UseSnakeCaseNamingConvention()
         .AddInterceptors(new TimeStampInterceptor())
         .AddInterceptors(IgnoreTrackingInterceptor.Instance);
+        optionsBuilder.ConfigureWarnings(warnings =>
+        {
+            warnings.Ignore(CoreEventId.ManyServiceProvidersCreatedWarning);
+        });
     }
 
  
