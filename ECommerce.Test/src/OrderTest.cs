@@ -134,7 +134,7 @@ public class OrderTest
 
         mockOrderRepo.Setup(repo => repo.GetAll(It.IsAny<BaseQueryParameter>())).Returns(purchases);
         mockMapper.Setup(mapper => mapper.Map<Purchase, PurchaseReadDTO>(It.IsAny<Purchase>()))
-            .Returns((Purchase purchase) => purchaseDTOs.FirstOrDefault(dto => dto.PurchaseId == purchase.Id)); // 使用正确的属性名称 Id
+            .Returns((Purchase purchase) => purchaseDTOs.FirstOrDefault(dto => dto.PurchaseId == purchase.Id)); 
 
         var result = orderService.GetAllOrders(new BaseQueryParameter());
         Assert.NotNull(result);
@@ -146,7 +146,7 @@ public class OrderTest
     {
         var orderId = Guid.NewGuid(); // valid id
         var targetOrder = new Purchase { Id = orderId };
-        var mappedResult = new PurchaseReadDTO { PurchaseId = orderId }; // 使用正确的属性名称 PurchaseId
+        var mappedResult = new PurchaseReadDTO { PurchaseId = orderId }; 
 
         var mockOrderRepo = new Mock<IPurchaseRepo>();
         var mockMapper = new Mock<IMapper>();
@@ -167,7 +167,7 @@ public class OrderTest
     {
         var orderId = Guid.NewGuid(); // valid id
         var updates = new PurchaseUpdateDTO { Status = Status.Processing }; 
-        var targetOrder = new Purchase { Status = Status.Pending }; // 设置一个不同于更新状态的目标状态
+        var targetOrder = new Purchase { Status = Status.Pending }; 
 
         var mockOrderRepo = new Mock<IPurchaseRepo>();
         var mockMapper = new Mock<IMapper>();
@@ -176,20 +176,11 @@ public class OrderTest
         var orderService = new PurchaseService(mockOrderRepo.Object, mockMapper.Object, mockProductRepo.Object, mockUserRepo.Object);
 
         mockOrderRepo.Setup(repo => repo.GetById(orderId)).Returns(targetOrder);
-        mockMapper.Setup(mapper => mapper.Map<PurchaseReadDTO>(It.IsAny<Purchase>())).Returns(new PurchaseReadDTO { Status = Status.Processing }); // 设置 mapper.Map 的模拟行为
+        mockMapper.Setup(mapper => mapper.Map<PurchaseReadDTO>(It.IsAny<Purchase>())).Returns(new PurchaseReadDTO { Status = Status.Processing }); 
 
         var result = orderService.UpdateOrderStatus(orderId, updates);
 
         Assert.NotNull(result);
         Assert.Equal(updates.Status, result.Status); 
     }
-
-
-
-
-
-
-
-
-
 }
