@@ -54,4 +54,4 @@ jobs:
           app-name: 'gmall'
           slot-name: 'Production'
           package: .
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_90793DEA34804020B61E65174384CE21 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_0F98F821E1254BB5B8BB38CE00252DBD }}
