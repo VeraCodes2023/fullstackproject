@@ -7,6 +7,8 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using ECommerceWebAPI;
 using Microsoft.AspNetCore.Diagnostics;
+using Npgsql;
+
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddCors(options =>
@@ -45,15 +47,24 @@ builder.Services.AddScoped<IReviewRepo,ReviewRepo>();
 builder.Services.AddScoped<IPasswordHashRepo, PasswordHashRepo>();
 builder.Services.AddScoped<IAuthService, AuthService>(); 
 builder.Services.AddScoped<ITokenService, TokenService>(); 
-// builder.Services.AddAutoMapper(typeof(Program).Assembly);
-// builder.Services.AddAutoMapper(typeof(MapperProfile).Assembly);
-builder.Services.AddAutoMapper(typeof(UserService).Assembly);
-builder.Services.AddAutoMapper(typeof(PurchaseService).Assembly);
-builder.Services.AddAutoMapper(typeof(ProductService).Assembly);
-builder.Services.AddAutoMapper(typeof(CategoryService).Assembly);
 
-builder.Services.AddDbContext<DatabaseContext>();
-builder.Services.AddProblemDetails();
+// builder.Services.AddAutoMapper(typeof(Program).Assembly);
+builder.Services.AddAutoMapper(typeof(MapperProfile).Assembly);
+
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+var dataSourceBuilder = new NpgsqlDataSourceBuilder(connectionString);
+dataSourceBuilder.MapEnum<Role>();
+dataSourceBuilder.MapEnum<Status>();
+var dataSource = dataSourceBuilder.Build();
+
+// add database context service
+builder.Services.AddDbContext<DatabaseContext>(options =>
+{
+    options.UseNpgsql(dataSource)
+           .UseSnakeCaseNamingConvention()
+           .AddInterceptors(new TimeStampInterceptor());
+});
+
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(o =>
 {

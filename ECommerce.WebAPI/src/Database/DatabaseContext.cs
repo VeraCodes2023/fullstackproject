@@ -30,23 +30,8 @@ public class DatabaseContext:DbContext
     }
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        var dataSourceBuilder = new NpgsqlDataSourceBuilder(_config.GetConnectionString("DefaultConnection"));
-        dataSourceBuilder.MapEnum<Role>();
-        dataSourceBuilder.MapEnum<Status>();
-        var dataSource = dataSourceBuilder.Build();
-        optionsBuilder
-        .UseNpgsql(dataSource)
-        .UseSnakeCaseNamingConvention()
-        .AddInterceptors(new TimeStampInterceptor())
-        .AddInterceptors(IgnoreTrackingInterceptor.Instance);
-        optionsBuilder.ConfigureWarnings(warnings =>
-        {
-            warnings.Ignore(CoreEventId.ManyServiceProvidersCreatedWarning);
-        });
+        base.OnConfiguring(optionsBuilder);
     }
-
- 
-
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
        
