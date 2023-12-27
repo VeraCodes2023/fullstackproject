@@ -1,0 +1,52 @@
+### add more products
+POST http://localhost:5074/api/v1/products
+Content-Type: application/json
+Authorization: Bearer  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJiNjU0M2IxZC1hZGMzLTRmMWYtYTMwMy02NjlhYTA4OGZjZDQiLCJyb2xlIjoiQWRtaW4iLCJuYmYiOjE3MDM2NzUwMTAsImV4cCI6MTcwMzg0NzgxMCwiaWF0IjoxNzAzNjc1MDEwLCJpc3MiOiJWZXJhIENoYW5nIiwiYXVkIjoiRWNvbW1lcmNlIn0.hcO8-kadXdLvcqFPXPz7AKKWQKFPMZXJrQRxQHnPslc
+
+{
+  "Title": "Apple Phone 13",
+  "Price": 1200,
+  "Description": "For video live vloggers and professional photographers.",
+  "CategoryId": 5,
+  "Inventory":12220,
+  "ImageCreateDTOs": [
+    {
+       "Url": "https://fakeimg.pl/200x200"
+    }
+  ]
+}
+
+### Get All Product
+GET http://localhost:5074/api/v1/products
+Authorization: Bearer  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJlMTIwNjRjZC0xNTM2LTQ3NzItOGY2MC1hNDdhNTVjMjYzMmYiLCJyb2xlIjoiQWRtaW4iLCJuYmYiOjE3MDMwMDYxNjAsImV4cCI6MTcwMzE3ODk2MCwiaWF0IjoxNzAzMDA2MTYwLCJpc3MiOiJWZXJhIENoYW5nIiwiYXVkIjoiRWNvbW1lcmNlIn0.NDSx4C8PLTiCIJzVxitk4enTxR-L801N1CijGUcm08A
+Content-Type: application/json
+
+
+##### Get One product by id
+GET http://localhost:5074/api/v1/products/07ab95cc-ace7-42d4-9917-4ecded861541
+Content-Type: application/json
+
+
+### Update Any Product as Admin
+PUT http://localhost:5074/api/v1/products/3343ebe7-437f-451e-a3b5-8aae40f71aee
+Authorization: Bearer  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJiNjU0M2IxZC1hZGMzLTRmMWYtYTMwMy02NjlhYTA4OGZjZDQiLCJyb2xlIjoiQWRtaW4iLCJuYmYiOjE3MDM2NzUwMTAsImV4cCI6MTcwMzg0NzgxMCwiaWF0IjoxNzAzNjc1MDEwLCJpc3MiOiJWZXJhIENoYW5nIiwiYXVkIjoiRWNvbW1lcmNlIn0.hcO8-kadXdLvcqFPXPz7AKKWQKFPMZXJrQRxQHnPslc
+Content-Type: application/json
+
+{
+  "Title": "Apple Phone 12",
+  "Price":1200,
+  "Description": "For video live vloggers and professional photographers",
+  "CategoryId": 2,
+  "ImageUpdateDTOs": [
+    {
+       "Url": "https://fakeimg.pl/200x180"
+       
+    }
+  ],
+  "Inventory":23899
+}
+
+#### Delete Product
+DELETE http://localhost:5074/api/v1/products/142402d7-bf1f-4492-9cdf-ba26e9f9997d
+Authorization: Bearer  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJiNjU0M2IxZC1hZGMzLTRmMWYtYTMwMy02NjlhYTA4OGZjZDQiLCJyb2xlIjoiQWRtaW4iLCJuYmYiOjE3MDM2NzUwMTAsImV4cCI6MTcwMzg0NzgxMCwiaWF0IjoxNzAzNjc1MDEwLCJpc3MiOiJWZXJhIENoYW5nIiwiYXVkIjoiRWNvbW1lcmNlIn0.hcO8-kadXdLvcqFPXPz7AKKWQKFPMZXJrQRxQHnPslc
+Content-Type: application/json
