@@ -8,6 +8,8 @@ using System.Text;
 using ECommerceWebAPI;
 using Microsoft.AspNetCore.Diagnostics;
 using Npgsql;
+using Microsoft.OpenApi.Models;
+using Ecommerce.WebAPI.src.Authorization;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -27,6 +29,20 @@ builder.Services.Configure<RouteOptions>(options=>options.LowercaseUrls=true);
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+// builder.Services.AddSwaggerGen(
+//     options =>
+//     {
+//         options.AddSecurityDefinition("oauth2", new OpenApiSecurityScheme
+//         {
+//             Description = "Bearer token authentication",
+//             Name = "Authorization", 
+//             In = ParameterLocation.Header,
+//             Scheme = "Bearer"
+//         }
+//         );
+//         // options.OperationFilter<SecurityRequirementsOperationFilter>();
+//     }
+// );
 
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IUserRepo, UserRepo>();
@@ -88,6 +104,7 @@ builder.Services.AddAuthorization(options =>
         policy.RequireRole("Admin"));
     options.AddPolicy("CustomerPolicy", policy =>
         policy.RequireRole("Customer"));
+    // options.AddPolicy("AdminOrOwner", policy => policy.Requirements.Add(new AdminOrOwnerRequirement()));
 });
 
 

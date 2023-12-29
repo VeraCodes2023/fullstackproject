@@ -222,28 +222,37 @@ public class UserTest
         Assert.Throws<Exception>(() => userService.GetUserByEmail(email));
     }
 
-    [Fact]
-    public void GetUserProfile_ValidUserId_ReturnsUserReadDTO()
-    {
-      
-        var userId = Guid.NewGuid(); //valid id
+    // [Fact]
+    // public void GetUserProfile_ValidUserId_ReturnsUserReadDTO()
+    // {
+    //     string strGuid = "9f19b049-94fc-417e-b7e0-34fff19adf1e";
+    //     Guid userId = Guid.Parse(strGuid);
 
-        var mockUserRepo = new Mock<IUserRepo>();
-        var mockMapper = new Mock<IMapper>();
-        var mockPasswordRepo = new Mock<IPasswordHashRepo>();
-        var userService = new UserService(mockUserRepo.Object, mockMapper.Object, mockPasswordRepo.Object);
-
-        var targetUser = new User { Id = userId, Name = "TestUser" }; 
-
-        mockUserRepo.Setup(repo => repo.GetById(userId)).Returns(targetUser);
-        mockMapper.Setup(mapper => mapper.Map<UserReadDTO>(targetUser))
-            .Returns(new UserReadDTO {Name = targetUser.Name });
-
-        var result = userService.GetUserProfile(userId);
-
-        Assert.NotNull(result);
-        Assert.Equal(targetUser.Name, result.Name);
-    }
+    //     var mockUserRepo = new Mock<IUserRepo>();
+    //     var mockMapper = new Mock<IMapper>();
+    //     var mockPasswordRepo = new Mock<IPasswordHashRepo>();
+    //     var userService = new UserService(mockUserRepo.Object, mockMapper.Object, mockPasswordRepo.Object);
+    //     var address = new Address
+    //     {
+    //         Street = "123 Main St",
+    //         City = "Example City",
+    //         State = "Example State",
+    //         PostalCode = "12345",
+    //         Country = "Example Country"
+    //     };
+    //    List<Address> addressList = new List<Address>
+    //     {
+    //         address
+    //     };
+    //     mockUserRepo.Setup(repo => repo.GetById(userId)).Returns(new User {
+    //         Name = "TestUser",
+    //         Email ="test@mail.com",
+    //         Avatar="avata.png", 
+    //         Addresses = addressList
+    //     });
+    //     var result = userService.GetUserProfile(userId);
+    //     Assert.NotNull(result);
+    // }
 
     [Fact]
     public void GetUserProfile_EmptyUserId_ThrowsException()

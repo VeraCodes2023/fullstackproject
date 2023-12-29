@@ -142,19 +142,30 @@ public class UserService : IUserService
         }
         try
         {
-            var targetUser=_userRepo.GetById(id);
-            if(targetUser is not null)
-            {
-                var distinctAddresses = targetUser.Addresses
-                .GroupBy(address => new { address.Street, address.City, address.State, address.PostalCode, address.Country })
-                .Select(group => group.First())
-                .ToList();
-
-                var mappedResult = _mapper.Map<UserReadDTO>(targetUser);
-                mappedResult.AddressReadDTOs = _mapper.Map<List<AddressReadDTO>>(distinctAddresses);
-                return mappedResult;
-            }
-            throw new Exception("not found");
+                var targetUser=_userRepo.GetById(id);
+            
+                if(targetUser != null && targetUser.Addresses != null && targetUser.Addresses.Any())
+                {
+                    var distinctAddresses = targetUser.Addresses
+                        .GroupBy(address => new { address.Street, address.City, address.State, address.PostalCode, address.Country })
+                        .Select(group => group.First())
+                        .ToList();
+                        if (distinctAddresses != null)
+                        {
+                            var mappedResult = _mapper.Map<UserReadDTO>(targetUser);
+                            mappedResult.AddressReadDTOs = _mapper.Map<List<AddressReadDTO>>(distinctAddresses);
+                            return mappedResult;
+                        }
+                        else
+                        {
+                            throw new Exception("address not found");
+                        }
+    
+                }
+                else
+                {
+                    throw new Exception("user not found.");
+                }
         }
         catch(Exception)
         {
@@ -215,7 +226,7 @@ public class UserService : IUserService
 
     public UserReadDTO UpdateUserProfile(Guid userId,UserUpdateDTO updatedProfile)
     {
-        System.Console.WriteLine(userId);
+        
         if (userId == Guid.Empty || updatedProfile == null)
         {
             throw new Exception("bad request");

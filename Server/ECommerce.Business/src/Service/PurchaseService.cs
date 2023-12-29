@@ -160,9 +160,9 @@ public class PurchaseService : IPurchaseService
 
     public PurchaseReadDTO GetOrderById(Guid id)
     {
-         if(id == Guid.Empty)
+        if(id == Guid.Empty)
         {
-            throw new Exception("bad request");
+            throw new Exception("400 bad request");
         }
         try
         {
@@ -178,7 +178,7 @@ public class PurchaseService : IPurchaseService
             }
             else
             {
-                throw new Exception("not found");
+                throw new Exception("404 Order not found");
             }
         }
         catch(Exception)
