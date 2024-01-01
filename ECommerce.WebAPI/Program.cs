@@ -67,7 +67,7 @@ builder.Services.AddScoped<ITokenService, TokenService>();
 // builder.Services.AddAutoMapper(typeof(Program).Assembly);
 builder.Services.AddAutoMapper(typeof(MapperProfile).Assembly);
 
-var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+var connectionString = builder.Configuration.GetConnectionString("ecommerce");
 var dataSourceBuilder = new NpgsqlDataSourceBuilder(connectionString);
 dataSourceBuilder.MapEnum<Role>();
 dataSourceBuilder.MapEnum<Status>();
