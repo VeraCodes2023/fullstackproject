@@ -1,0 +1,134 @@
+### Create New User as admin
+POST http://localhost:5074/api/v1/users
+Content-Type: application/json
+
+
+{
+  "Name": "Helennia",
+  "Email": "helennia@htomail.com",
+  "Password": "helenmm789",
+  "Avatar": "helennia.png",
+  "Role": "Admin",
+  "Addresses": [
+    {
+      "Street": "Mannerheimintie",
+      "City": "Helsinki",
+      "State": "Etelä-Karjala",
+      "PostalCode": "0105322",
+      "Country": "Suomi"
+    }
+  ]
+}
+
+### Create New User as customer
+POST http://localhost:5074/api/v1/users
+Content-Type: application/json
+
+
+{
+  "Name": "Lucy Chang",
+  "Email": "lucychang@mail.com",
+  "Password": "lucy999",
+  "Avatar": "https://t4.ftcdn.net/jpg/03/64/21/11/360_F_364211147_1qgLVxv1Tcq0Ohz3FawUfrtONzz8nq3e.jpg",
+  "Role": "Customer",
+  "Addresses": [
+    {
+      "Street": "Mannerheimintie",
+      "City": "Helsinki",
+      "State": "Etelä-Karjala",
+      "PostalCode": "0105322",
+      "Country": "Suomi"
+    }
+  ]
+}
+
+### User Login as Admin
+POST  http://localhost:5074/api/v1/users/login
+Content-Type: application/json
+
+{
+  "email": "helennia@mail.com",
+  "password": "helenmm789"
+}
+
+### User Login as Customer 
+POST http://localhost:5074/api/v1/users/login
+Content-Type: application/json
+
+{
+  "email": "mohammud@mail.com",
+  "password": "mohammud999"
+}
+
+### Get All Users
+GET http://localhost:5074/api/v1/users
+Authorization: Bearer  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJiNjU0M2IxZC1hZGMzLTRmMWYtYTMwMy02NjlhYTA4OGZjZDQiLCJyb2xlIjoiQWRtaW4iLCJuYmYiOjE3MDM5NDM1ODMsImV4cCI6MTcwNDExNjM4MywiaWF0IjoxNzAzOTQzNTgzLCJpc3MiOiJWZXJhIENoYW5nIiwiYXVkIjoiRWNvbW1lcmNlIn0.iJc6cgUUVQjQtu3h5DZKwdLLfJcV41Paud5SdtZFA_8
+Content-Type: application/json
+
+##### Get One User
+GET http://localhost:5074/api/v1/users/9f19b049-94fc-417e-b7e0-34fff19adf1e
+Authorization: Bearer  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiI5ZjE5YjA0OS05NGZjLTQxN2UtYjdlMC0zNGZmZjE5YWRmMWUiLCJyb2xlIjoiQ3VzdG9tZXIiLCJuYmYiOjE3MDM5NDMzMjcsImV4cCI6MTcwNDExNjEyNywiaWF0IjoxNzAzOTQzMzI3LCJpc3MiOiJWZXJhIENoYW5nIiwiYXVkIjoiRWNvbW1lcmNlIn0.l0JPmeqSLE-ugPvcYE7Ypn9GaSr_85Dxe4ur9f4eKgk
+Content-Type: application/json
+
+
+### Get Current loggedin User Profile
+GET http://localhost:5074/api/v1/users/profile
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiI5ZjE5YjA0OS05NGZjLTQxN2UtYjdlMC0zNGZmZjE5YWRmMWUiLCJyb2xlIjoiQ3VzdG9tZXIiLCJuYmYiOjE3MDM3MDUwNDgsImV4cCI6MTcwMzg3Nzg0OCwiaWF0IjoxNzAzNzA1MDQ4LCJpc3MiOiJWZXJhIENoYW5nIiwiYXVkIjoiRWNvbW1lcmNlIn0.PJexkxKCVMx2llB3KvGs3QNyXNramaFYYnPhi1C4MFk
+Content-Type: application/json
+
+
+#### Get Current User by email 
+GET  http://localhost:5074/api/v1/users/getbyemail?email=ava7218@example.com
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJiNjU0M2IxZC1hZGMzLTRmMWYtYTMwMy02NjlhYTA4OGZjZDQiLCJyb2xlIjoiQWRtaW4iLCJuYmYiOjE3MDM2NzUwMTAsImV4cCI6MTcwMzg0NzgxMCwiaWF0IjoxNzAzNjc1MDEwLCJpc3MiOiJWZXJhIENoYW5nIiwiYXVkIjoiRWNvbW1lcmNlIn0.hcO8-kadXdLvcqFPXPz7AKKWQKFPMZXJrQRxQHnPslc
+Content-Type: application/json
+
+
+
+### Update Any User as Admin
+PUT http://localhost:5074/api/v1/users/b37273e9-c220-4e49-af2a-5baaa817f92c
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJiNjU0M2IxZC1hZGMzLTRmMWYtYTMwMy02NjlhYTA4OGZjZDQiLCJyb2xlIjoiQWRtaW4iLCJuYmYiOjE3MDM2NzUwMTAsImV4cCI6MTcwMzg0NzgxMCwiaWF0IjoxNzAzNjc1MDEwLCJpc3MiOiJWZXJhIENoYW5nIiwiYXVkIjoiRWNvbW1lcmNlIn0.hcO8-kadXdLvcqFPXPz7AKKWQKFPMZXJrQRxQHnPslc
+Content-Type: application/json
+
+{
+  "Name": "Lucy Ahde",
+  "Avatar": "Doe.png",
+    "AddressUpdateDTOs": [
+    {
+      "Street": "Keskusta 256",
+      "City": "Kuopiossa",
+      "State": "Kakoos",
+      "PostalCode": "0105322",
+      "Country": "Suomi"
+    }
+  ]
+}
+
+
+### Update current user info (User can only update his own info)
+PUT http://localhost:5074/api/v1/users/profile
+Content-Type: application/json
+Authorization: Bearer  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiI5ZjE5YjA0OS05NGZjLTQxN2UtYjdlMC0zNGZmZjE5YWRmMWUiLCJyb2xlIjoiQ3VzdG9tZXIiLCJuYmYiOjE3MDM3MDcxMzAsImV4cCI6MTcwMzg3OTkzMCwiaWF0IjoxNzAzNzA3MTMwLCJpc3MiOiJWZXJhIENoYW5nIiwiYXVkIjoiRWNvbW1lcmNlIn0.Kd2flF4HlyJNZhTrIKiX2tpA_ngGNe-ys441la1tNJ0
+
+{
+  "Name": "Doe",
+  "Email": "mohammud@mail.com",
+  "Avatar": "Doe.png",
+  "AddressUpdateDTOs": [
+    {
+      "Street": "DEF street NO.23",
+      "City": "Kouvola",
+      "State": "Kymmenlakso",
+      "PostalCode": "45150",
+      "Country": "Finland"
+    }
+    
+    ]
+}
+  
+#### Delete User
+DELETE http://localhost:5074/api/v1/users/cb638a97-e6c9-4320-89e9-42c53d170f98
+Authorization: Bearer  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJiNjU0M2IxZC1hZGMzLTRmMWYtYTMwMy02NjlhYTA4OGZjZDQiLCJyb2xlIjoiQWRtaW4iLCJuYmYiOjE3MDM2NzUwMTAsImV4cCI6MTcwMzg0NzgxMCwiaWF0IjoxNzAzNjc1MDEwLCJpc3MiOiJWZXJhIENoYW5nIiwiYXVkIjoiRWNvbW1lcmNlIn0.hcO8-kadXdLvcqFPXPz7AKKWQKFPMZXJrQRxQHnPslc
+Content-Type: application/json
+
+
+

@@ -1,0 +1,42 @@
+### Get All orders
+GET  http://localhost:5074/api/v1/orders
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJiNjU0M2IxZC1hZGMzLTRmMWYtYTMwMy02NjlhYTA4OGZjZDQiLCJyb2xlIjoiQWRtaW4iLCJuYmYiOjE3MDM2NzUwMTAsImV4cCI6MTcwMzg0NzgxMCwiaWF0IjoxNzAzNjc1MDEwLCJpc3MiOiJWZXJhIENoYW5nIiwiYXVkIjoiRWNvbW1lcmNlIn0.hcO8-kadXdLvcqFPXPz7AKKWQKFPMZXJrQRxQHnPslc
+ 
+
+### get an order by id
+GET http://localhost:5074/api/v1/orders/9f7da72e-4bf7-480e-8720-0c51679cfdfa
+Content-Type: application/json
+Authorization: Bearer  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJlOGRkZmI2Zi03NWY1LTRlMGQtODZhMS1iMTdiMzIwMzA2MzkiLCJyb2xlIjoiQWRtaW4iLCJuYmYiOjE3MDQwMTU4ODcsImV4cCI6MTcwNDE4ODY4NywiaWF0IjoxNzA0MDE1ODg3LCJpc3MiOiJWZXJhIENoYW5nIiwiYXVkIjoiRWNvbW1lcmNlIn0.vm0GrrFjUWXMpno0HfFA9BsWprYkoyoU_y6kqQe9wys
+
+
+### create an order "UserId": "03e5da24-f6dc-414c-a24f-cbc1d8baafb2",
+POST  http://localhost:5074/api/v1/orders
+Content-Type:  application/json
+Authorization:  Bearer   eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiI5ZjE5YjA0OS05NGZjLTQxN2UtYjdlMC0zNGZmZjE5YWRmMWUiLCJyb2xlIjoiQ3VzdG9tZXIiLCJuYmYiOjE3MDQwMTY0MjgsImV4cCI6MTcwNDE4OTIyOCwiaWF0IjoxNzA0MDE2NDI4LCJpc3MiOiJWZXJhIENoYW5nIiwiYXVkIjoiRWNvbW1lcmNlIn0.eAycmP-9GJVno9sTcGF5h7MFSMOZrozs8wSRuVJ5NQI
+
+{
+    "PurchaseItems":[
+        {
+            "ProductId": "061b787d-20b5-4054-bdb5-d8dcbdcf4e0a",
+            "Quantity": 3
+        }
+    ]
+}
+
+
+### update an order
+PUT http://localhost:5074/api/v1/orders/9f7da72e-4bf7-480e-8720-0c51679cfdfa
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJiNjU0M2IxZC1hZGMzLTRmMWYtYTMwMy02NjlhYTA4OGZjZDQiLCJyb2xlIjoiQWRtaW4iLCJuYmYiOjE3MDM2NzUwMTAsImV4cCI6MTcwMzg0NzgxMCwiaWF0IjoxNzAzNjc1MDEwLCJpc3MiOiJWZXJhIENoYW5nIiwiYXVkIjoiRWNvbW1lcmNlIn0.hcO8-kadXdLvcqFPXPz7AKKWQKFPMZXJrQRxQHnPslc
+
+{
+    "Status":"processing"
+}
+
+
+
+### cancel an order
+DELETE  http://localhost:5074/api/v1/orders/b20d7960-ca27-4a4a-b852-90ffea327baf
+Content-Type:  application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJiNjU0M2IxZC1hZGMzLTRmMWYtYTMwMy02NjlhYTA4OGZjZDQiLCJyb2xlIjoiQWRtaW4iLCJuYmYiOjE3MDM2NzUwMTAsImV4cCI6MTcwMzg0NzgxMCwiaWF0IjoxNzAzNjc1MDEwLCJpc3MiOiJWZXJhIENoYW5nIiwiYXVkIjoiRWNvbW1lcmNlIn0.hcO8-kadXdLvcqFPXPz7AKKWQKFPMZXJrQRxQHnPslc

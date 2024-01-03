@@ -1,0 +1,39 @@
+### Get All Categories
+GET http://localhost:5074/api/v1/categories
+Content-Type: application/json
+
+
+### get a single category by id
+GET http://localhost:5074/api/v1/categories/8
+Content-Type: application/json
+
+
+### create a new category
+POST  http://localhost:5074/api/v1/categories
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJiNjU0M2IxZC1hZGMzLTRmMWYtYTMwMy02NjlhYTA4OGZjZDQiLCJyb2xlIjoiQWRtaW4iLCJuYmYiOjE3MDM2NzUwMTAsImV4cCI6MTcwMzg0NzgxMCwiaWF0IjoxNzAzNjc1MDEwLCJpc3MiOiJWZXJhIENoYW5nIiwiYXVkIjoiRWNvbW1lcmNlIn0.hcO8-kadXdLvcqFPXPz7AKKWQKFPMZXJrQRxQHnPslc
+
+
+{
+    "Id":21,
+    "Name":"Medicine",
+    "Image":"https://fakeimg.pl/200x200"
+}
+
+
+### update a category
+PUT http://localhost:5074/api/v1/categories/21
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJiNjU0M2IxZC1hZGMzLTRmMWYtYTMwMy02NjlhYTA4OGZjZDQiLCJyb2xlIjoiQWRtaW4iLCJuYmYiOjE3MDM2NzUwMTAsImV4cCI6MTcwMzg0NzgxMCwiaWF0IjoxNzAzNjc1MDEwLCJpc3MiOiJWZXJhIENoYW5nIiwiYXVkIjoiRWNvbW1lcmNlIn0.hcO8-kadXdLvcqFPXPz7AKKWQKFPMZXJrQRxQHnPslc
+
+{
+    "Name":"Interior Decoration",
+    "Image":"https://fakeimg.pl/200x200"
+}
+
+
+
+### remove a category
+DELETE  http://localhost:5074/api/v1/categories/21
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJiNjU0M2IxZC1hZGMzLTRmMWYtYTMwMy02NjlhYTA4OGZjZDQiLCJyb2xlIjoiQWRtaW4iLCJuYmYiOjE3MDM2NzUwMTAsImV4cCI6MTcwMzg0NzgxMCwiaWF0IjoxNzAzNjc1MDEwLCJpc3MiOiJWZXJhIENoYW5nIiwiYXVkIjoiRWNvbW1lcmNlIn0.hcO8-kadXdLvcqFPXPz7AKKWQKFPMZXJrQRxQHnPslc
