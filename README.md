@@ -70,7 +70,7 @@ Before coding, a well-planned database schema was designed to ensure proper data
 The Fullstack Project employs .NET Core's built-in exception handling capabilities to manage exceptions gracefully throughout the application. While not implementing a separate custom error handling middleware, our backend leverages the inherent exception capture system provided by the .NET Core framework.
 
 ### Swagger API endpoints 
-API endpoints are annotated for Swagger documentation, providing an interactive UI for testing and documentation. http://localhost:5000/swagger/index.html
+API endpoints are annotated for Swagger documentation, providing an interactive UI for testing and documentation.https://shopify-2023.azurewebsites.net/swagger/index.html
 
 ### Frontend Connection
 The modified frontend project is connected to this backend server to create a cohesive fullstack application. Refer to the frontend repository here for frontend-related details.
