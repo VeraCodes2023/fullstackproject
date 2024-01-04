@@ -81,6 +81,12 @@ Swagger Documentation. Both frontend and backend code undergo unit testing to ac
 ![Alt text](image.png)
 
 ### Deployment
+https://659527c2b075937d2e82f9c9--transcendent-cupcake-bdde5e.netlify.app test data :
+
+login as admin: Email: test@mail.com Password: test1234567890
+
+login as Customer to place orders Email:lucychang@mail.com Password:lucy999
+
 The live servers host frontend, backend, and database servers for comprehensive access and functionality.
 
 ###  Conclusion
